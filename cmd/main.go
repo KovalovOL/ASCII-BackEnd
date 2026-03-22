@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net/http"
 	"app/internal/routers"
 	"github.com/gin-gonic/gin"
 )
@@ -15,5 +16,11 @@ func main() {
 		},
 	)
 	r.POST("/pixelart", routers.PixelArtHandler)
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+
 	r.Run(":8080")
 }
