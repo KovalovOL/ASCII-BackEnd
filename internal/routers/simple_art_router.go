@@ -6,6 +6,11 @@ import (
 	"image"
 	_ "image/jpeg"
 	_ "image/png"
+	_ "image/gif"
+	_ "golang.org/x/image/tiff"
+	_ "golang.org/x/image/webp"
+	_ "golang.org/x/image/bmp"
+	
 	"net/http"
 	"strconv"
 
